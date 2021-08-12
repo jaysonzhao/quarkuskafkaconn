@@ -1,0 +1,4 @@
+# Created at 2021-08-12T08:10:32.004
+Boot Manifest-JAR contains absolute paths in classpath 'E:\github\quarkuskafkaconn\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+

@@ -16,6 +16,7 @@ import io.smallrye.reactive.messaging.kafka.api.IncomingKafkaRecordMetadata;
 import io.smallrye.reactive.messaging.annotations.Broadcast;
 import io.smallrye.reactive.messaging.annotations.Channel;
 
+import org.jboss.resteasy.annotations.SseElementType;
 import javax.enterprise.context.ApplicationScoped;
 import org.reactivestreams.Publisher;
 import javax.inject.Inject;
@@ -38,7 +39,9 @@ public class MesEvents {
     @GET
     @Path("/stream")
     @Produces(MediaType.SERVER_SENT_EVENTS)
+   // @SseElementType("text/plain") 
     public Publisher<String> stream() {
+        logger.info("Sending front message");
         return message;
     }
 
