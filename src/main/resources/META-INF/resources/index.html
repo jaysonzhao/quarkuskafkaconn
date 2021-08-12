@@ -112,7 +112,7 @@
     Your new Cloud-Native application is ready!
 </div>
 
-<div class="container">
+<div class="container" id="content">
     <div class="left-column">
         <p class="lead"> Congratulations, you have created a new Quarkus cloud application.</p>
 
@@ -167,4 +167,12 @@
     </div>
 </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+	var source = new EventSource("/ui-topic/stream");
+    source.onmessage = function (event) {
+        console.log(event);
+		document.getElementById("content").innerHTML = event.data;  
+    };
+</script>
 </html>
